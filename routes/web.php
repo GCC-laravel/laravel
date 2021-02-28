@@ -13,7 +13,9 @@ use App\Http\Controllers\UsersController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/test', function(){
+    return 'test';
+});
 Route::get('/{name?}', function (Request $request) {
     return $request->get('name');
 });
