@@ -4,7 +4,7 @@
         <ul class="list-reset flex flex-row md:flex-col py-0 md:py-3 px-1 md:px-2 text-center md:text-left">
             <li class="mr-3 flex-1">
                 <a href="{{ route('dashboard.posts.index') }}" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 border-b-2 {{ request()->route()->uri == 'dashboard/posts' ? 'border-blue-600' : 'hover:border-red-500' }}">
-                    <i class="fas fa-tasks pr-0 md:pr-3 {{ request()->route()->uri == 'dashboard/posts' ? 'text-blue-600' : '' }}"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Posts</span>
+                    <i class="fas fa-tasks pr-0 md:pr-3 {{ request()->route()->uri == 'dashboard/posts' ? 'text-blue-600' : '' }}"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">{{ trans('menu.posts') }}</span>
                 </a>
             </li>
             <li class="mr-3 flex-1">

@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('page-title')
-Home Page
+Dashboard
 @endsection
 @section('content')
     <div class="flex flex-wrap">

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Validation\Rule;
+use App\Http\Requests\UpdatePostRequest;
 
 class PostsController extends Controller
 {
@@ -15,7 +15,7 @@ class PostsController extends Controller
         session()->put('myvalue', 'value');
         session()->forget('myvalue');
         //return session()->get('myvalue');
-        return session()->all();
+        //return session()->all();
         // return Route::currentRouteName();
         $posts = Post::with('user')->paginate(10);
         return view('dashboard.posts', compact('posts'));
@@ -27,16 +27,8 @@ class PostsController extends Controller
         ->withPost($post);
     }
 
-    public function update(Post $post, Request $request)
+    public function update(Post $post, UpdatePostRequest $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'body' => 'required',
-            'image' => Rule::requiredIf(function () use ($request) {
-                return !$request->has('old_image');
-            })
-        ]);
-        
         $newImage = $request->old_image;
 
         if($request->hasFile('image')) {

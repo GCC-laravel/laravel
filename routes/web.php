@@ -31,9 +31,19 @@ Route::get('/users/index','UsersController@index');
 // })->name('dashboard')
 // ->middleware('auth');
 
+Route::get('denied', function(){
+    return "You don't have permissions";
+});
+
 Route::group(['prefix' => 'user/posts',
 'middleware' => 'auth'], function(){
     Route::get('/', [PostsController::class, 'index'])->name('user.posts');
 });
+
+
+Route::get('set-locale/{lang}', function($lang){
+    session(['locale' => $lang]);
+    return redirect()->back();
+})->name('set-locale');
 
 require __DIR__ . '/auth.php';

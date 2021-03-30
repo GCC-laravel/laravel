@@ -24,7 +24,10 @@
                     <a class="inline-block py-2 px-4 text-white no-underline" href="#">Active</a>
                 </li>
                 <li class="flex-1 md:flex-none md:mr-3">
-                    <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">link</a>
+                    <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="{{ route('set-locale', 'ar') }}">AR</a>
+                </li>
+                <li class="flex-1 md:flex-none md:mr-3">
+                    <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="{{ route('set-locale', 'en') }}">En</a>
                 </li>
                 <li class="flex-1 md:flex-none md:mr-3">
                     <div class="relative inline-block">

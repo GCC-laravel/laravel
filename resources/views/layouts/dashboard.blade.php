@@ -37,6 +37,12 @@
                 <span class="block sm:inline text-green-900">{{ session('message') }}</span>
               </div>
             @endif
+
+            @if (session('error'))
+            <div class="bg-red-lightest border border-red-light text-red-dark pl-4 pr-8 py-3 rounded relative" role="alert">
+                <span class="block sm:inline text-red-900">{{ session('error') }}</span>
+              </div>
+            @endif
             @yield('content')
         </div>
     </div>
