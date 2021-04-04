@@ -18,6 +18,6 @@
 
 @section('scripts')
     <script>
-        console.log('test')
+
     </script>
 @endsection

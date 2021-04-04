@@ -32,6 +32,12 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if(!auth()->user()->hasRole('admin')) {
+            $request->session()->invalidate();
+            session()->flash('error', 'No permissions!');
+            return redirect()->back();
+        }
+        
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
